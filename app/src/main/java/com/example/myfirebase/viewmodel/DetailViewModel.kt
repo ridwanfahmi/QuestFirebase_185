@@ -54,9 +54,4 @@ class DetailViewModel(
             println("Gagal Hapus Data: ${e.message}")
         }
     }
-
-
-
-
-
 }
