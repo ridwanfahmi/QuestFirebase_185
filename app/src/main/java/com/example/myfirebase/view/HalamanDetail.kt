@@ -106,6 +106,16 @@ private fun BodyDetailDataSiswa(
         ) {
             Text(stringResource(R.string.delete))
         }
+        if (deleteConfirmationRequired) {
+            DeleteConfirmationDialog(
+                onDeleteConfirm = {
+                    deleteConfirmationRequired = false
+                    onDelete()
+                },
+                onDeleteCancel = { deleteConfirmationRequired = false },
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium))
+            )
+        }
 
     }
 }
@@ -113,4 +123,11 @@ private fun BodyDetailDataSiswa(
 @Composable
 fun DetailDataSiswa(
     siswa: Siswa?, modifier: Modifier = Modifier
+){}
+
+@Composable
+private fun DeleteConfirmationDialog(
+    onDeleteConfirm: () -> Unit,
+    onDeleteCancel: () -> Unit,
+    modifier: Modifier = Modifier
 ){}
